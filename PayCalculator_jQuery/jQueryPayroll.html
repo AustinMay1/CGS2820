@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
+    <link href="./Styles.css" rel="stylesheet" />
+    <title>Pay Calculator | jQuery</title>
+  </head>
+  <body>
+    <main>
+      <div id="employeeForm">
+        <form method="POST" action="#" id="empForm">
+          <label for="empId">Employee ID</label>
+          <input type="text" id="empId" />
+
+          <label for="empName">Employee Name</label>
+          <input type="text" id="empName" />
+
+          <label for="empHours">Hours Worked</label>
+          <input type="number" id="empHours" />
+
+          <label for="empRate">Pay Rate</label>
+          <input type="number" id="empRate" />
+        </form>
+        <div class="btnGroup">
+          <button type="submit" id="addEmp">Add Employee</button>
+          <button id="calculate">Calculate Total Disbursement</button>
+          <button id="clear">Clear</button>
+        </div>
+      </div>
+
+      <div id="output">
+        <div id="pay"></div>
+        <p id="results"></p>
+      </div>
+    </main>
+
+    <div id="total"></div>
+
+    <!--JS-->
+    <script src="./jQueryPayroll.js"></script>
+  </body>
+</html>
