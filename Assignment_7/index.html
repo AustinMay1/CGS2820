@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <script
+      src="https://code.jquery.com/jquery-3.6.1.js"
+      integrity="sha256-3zlB5s2uwoUzrXK3BT7AX3FyvojsraNFxCc2vC/7pNI="
+      crossorigin="anonymous"
+    ></script>
+    <title>Assignment 7</title>
+    <style>
+      .thumbnailPic {
+        border-style: solid;
+        border-width: 0px;
+        border-color: #8a4419;
+        border-radius: 0%;
+      }
+    </style>
+  </head>
+  <body>
+    <table style="width: 500px">
+      <tr>
+        <td>
+          <a id="imgOne"
+            ><img
+              class="thumbnailPic"
+              id="one"
+              style="border-radius: 30%; border-width: 10px"
+              src="./Assignment7Images/image1.jpg"
+          /></a>
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a id="imgTwo"
+            ><img
+              class="thumbnailPic"
+              id="two"
+              src="./Assignment7Images/image2.jpg"
+          /></a>
+        </td>
+        <td>
+          <img id="imgBig" src="./Assignment7Images/image1B.jpg" />
+        </td>
+      </tr>
+      <tr>
+        <td>
+          <a id="imgThree"
+            ><img
+              class="thumbnailPic"
+              id="three"
+              src="./Assignment7Images/image3.jpg"
+          /></a>
+        </td>
+      </tr>
+    </table>
+    <!--jQuery-->
+    <script>
+      $(document).ready(function () {
+        $("#imgOne").click(function () {
+          $("#imgBig").attr("src", "./Assignment7Images/image1B.jpg");
+          $("#one").css({ "border-width": "10px", "border-radius": "30%" });
+          $("#two").css({ "border-width": "0px", "border-radius": "0%" });
+          $("#three").css({ "border-width": "0px", "border-radius": "0%" });
+        });
+
+        $("#imgTwo").click(function () {
+          $("#imgBig").attr("src", "./Assignment7Images/image2B.jpg");
+          $("#two").css({ "border-width": "10px", "border-radius": "30%" });
+          $("#one").css({ "border-width": "0px", "border-radius": "0%" });
+          $("#three").css({ "border-width": "0px", "border-radius": "0%" });
+        });
+
+        $("#imgThree").click(function () {
+          $("#imgBig").attr("src", "./Assignment7Images/image3B.jpg");
+          $("#three").css({ "border-width": "10px", "border-radius": "30%" });
+          $("#two").css({ "border-width": "0px", "border-radius": "0%" });
+          $("#one").css({ "border-width": "0px", "border-radius": "0%" });
+        });
+      });
+    </script>
+  </body>
+</html>
