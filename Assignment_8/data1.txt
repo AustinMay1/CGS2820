@@ -1,0 +1,3 @@
+<h3 id="p1">.......right side view.......</h3>
+<h3 id="p2">.......center view.......</h3>
+<h3 id="p3">.......left side view.......</h3>
