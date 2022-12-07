@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 12</title>
+    <style>
+      #bf1 {
+        position: absolute;
+      }
+
+      #bf2 {
+        position: absolute;
+        top: 350px;
+      }
+    </style>
+    <script>
+      function moveTop() {
+        const img1 = document.getElementById("bf1");
+        let pos = 0;
+        let id = setInterval(frame, 5);
+
+        function frame() {
+            pos++;
+            img1.style.left = pos + 'px';
+            img1.style.top = pos + 'px';
+            if(pos == 350) {
+                clearInterval(id);
+                img1.style.visibility = 'hidden'
+            }
+        }
+      }
+
+      function moveBottom() {
+        const img2 = document.getElementById("bf2");
+        let posTop = 350;
+        let posLeft = 0;
+        let id = setInterval(frame, 5);
+
+        function frame() {
+            posLeft++;
+            img2.style.left = posLeft + 'px';
+            posTop--;
+            img2.style.top = posTop + 'px';
+            if(posTop == 0) {
+                clearInterval(id);
+                img2.style.visibility = 'hidden';
+            }
+        }
+      }
+    </script>
+  </head>
+  <body onload="moveTop(), moveBottom()">
+    <img
+      src="butterfly.gif"
+      width="150"
+      height="250"
+      alt="butterfly"
+      id="bf1"
+    />
+    <img
+      src="butterfly.gif"
+      width="150"
+      height="250"
+      alt="butterfly"
+      id="bf2"
+    />
+  </body>
+</html>
