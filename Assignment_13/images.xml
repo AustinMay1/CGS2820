@@ -1,0 +1,17 @@
+<?xml version='1.0' encoding='utf-8'?>
+<album>
+    <photos>
+        <thumbnail>image1.jpg</thumbnail>
+        <photo>image1B.jpg</photo>
+    </photos>
+
+    <photos>
+        <thumbnail>image2.jpg</thumbnail>
+        <photo>image2B.jpg</photo>
+    </photos>
+
+    <photos>
+        <thumbnail>image3.jpg</thumbnail>
+        <photo>image3B.jpg</photo>
+    </photos>
+</album>

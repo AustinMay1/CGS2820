@@ -1,0 +1,55 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Assignment 13</title>
+    <style>
+      table {
+        border: 1px solid black;
+        border-radius: 5px;
+        display: table;
+      }
+
+      td {
+        border: 1px solid black;
+      }
+    </style>
+  </head>
+
+  <body>
+    <table width="900" height="200">
+      <tr>
+        <td width="30%"><table id="products"></table></td>
+        <td id="preview"></td>
+      </tr>
+    </table>
+
+    <script>
+      let xmlhttp = new XMLHttpRequest();
+      xmlhttp.open("GET", "images.xml", false);
+      xmlhttp.send();
+      let xmlDoc = xmlhttp.responseXML;
+      let images = xmlDoc.getElementsByTagName("photos");
+      let table = "";
+      for (let i = 0; i < images.length; i++) {
+        table += `<tr><td onmouseover='displayPhoto(${i})'>`;
+        table += "<img src='images/";
+        table +=
+          images[i].getElementsByTagName("thumbnail")[0].childNodes[0]
+            .nodeValue;
+        table += "' /></td></tr>";
+      }
+
+      document.getElementById("products").innerHTML = table;
+
+      function displayPhoto(x) {
+        document.getElementById("preview").innerHTML =
+          "<img src='images/" +
+          images[x].getElementsByTagName("photo")[0].childNodes[0].nodeValue +
+          "' />";
+      }
+    </script>
+  </body>
+</html>
