@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Exam | Part 2</title>
+</head>
+<body>
+    <div id="image-container"></div>
+
+    <script>
+        // Randomly display photos from data/images.xml
+        
+        const xhttp = new XMLHttpRequest();
+        xhttp.open("GET", "data/images.xml", false);
+        xhttp.send();
+        let xmlDoc = xhttp.responseXML;
+        let photos = xmlDoc.getElementsByTagName('photos');
+
+        setInterval(function loadImg() {
+            let randomNum = Math.floor(Math.random() * 5);
+            let cont = '';
+            cont += "<img src='data/";
+            cont += photos[randomNum].getElementsByTagName('photo')[0].childNodes[0].nodeValue;
+            cont += "' />"
+            document.getElementById('image-container').innerHTML = cont;   
+        }, 500);
+    </script>
+</body>
+</html>
